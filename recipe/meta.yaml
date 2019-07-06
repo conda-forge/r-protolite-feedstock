@@ -1,4 +1,4 @@
-{% set version = '1.8' %}
+{% set version = '1.9' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,22 +10,22 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/protolite_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/protolite/protolite_{{ version }}.tar.gz
-  sha256: 99261312d873c9ce04867d81093eb317c814193155fa86c1914f9522dca38517
+  sha256: e627f3aa9db54f6ab1bf2121312577d39f093e9b96efb3d598240ca7124862a2
 
 build:
   skip: True  # [win]
   merge_build_host: True  # [win]
-  number: 1002
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - {{ compiler('fortran') }}      # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}sed               # [win]
     - {{posix}}grep              # [win]
@@ -64,12 +64,7 @@ about:
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
     - xhochy
 
 # Package: protolite
@@ -78,7 +73,7 @@ extra:
 # Author: Jeroen Ooms
 # Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 # Description: Optimized C++ implementations for reading and writing protocol-buffers. Currently supports 'rexp.proto' for serializing R objects and 'geobuf.proto' for geojson data. This lightweight package is complementary to the much larger 'RProtoBuf' package which provides a full featured toolkit for working with protocol-buffers in R.
-# Version: 1.8
+# Version: 1.9
 # License: MIT + file LICENSE
 # URL: https://github.com/jeroen/protolite#readme
 # BugReports: https://github.com/jeroen/protolite/issues
@@ -86,8 +81,8 @@ extra:
 # LinkingTo: Rcpp
 # Imports: Rcpp (>= 0.12.12), jsonlite
 # Suggests: testthat, RProtoBuf
-# RoxygenNote: 6.0.1
+# RoxygenNote: 6.1.1
 # NeedsCompilation: yes
-# Packaged: 2018-06-25 21:30:45 UTC; jeroen
+# Packaged: 2019-07-02 10:59:17 UTC; jeroen
 # Repository: CRAN
-# Date/Publication: 2018-06-26 18:57:58 UTC
+# Date/Publication: 2019-07-02 11:50:02 UTC
