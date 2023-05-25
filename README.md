@@ -1,11 +1,11 @@
-About r-protolite
-=================
+About r-protolite-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-protolite-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/jeroen/protolite#readme
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-protolite-feedstock/blob/main/LICENSE.txt)
 
 Summary: Optimized C++ implementations for reading and writing protocol-buffers. Currently supports 'rexp.proto' for serializing R objects and 'geobuf.proto' for geojson data. This lightweight package is complementary to the much larger 'RProtoBuf' package which provides a full featured toolkit for working with protocol-buffers in R.
 
@@ -27,31 +27,59 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_r_base4.1</td>
+              <td>linux_64_libprotobuf3.21r_base4.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2318&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_r_base4.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libprotobuf3.21r_base4.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_r_base4.2</td>
+              <td>linux_64_libprotobuf3.21r_base4.2</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2318&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_r_base4.2" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libprotobuf3.21r_base4.2" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_r_base4.1</td>
+              <td>linux_64_libprotobuf4.23r_base4.1</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2318&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_r_base4.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libprotobuf4.23r_base4.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_r_base4.2</td>
+              <td>linux_64_libprotobuf4.23r_base4.2</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2318&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_r_base4.2" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libprotobuf4.23r_base4.2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libprotobuf3.21r_base4.1</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2318&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libprotobuf3.21r_base4.1" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libprotobuf3.21r_base4.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2318&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libprotobuf3.21r_base4.2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libprotobuf4.23r_base4.1</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2318&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libprotobuf4.23r_base4.1" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libprotobuf4.23r_base4.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2318&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-protolite-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libprotobuf4.23r_base4.2" alt="variant">
                 </a>
               </td>
             </tr>
