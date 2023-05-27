@@ -16,12 +16,12 @@ jobs:
         CONFIG: linux_64_libprotobuf3.21r_base4.2
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_libprotobuf4.23r_base4.1:
-        CONFIG: linux_64_libprotobuf4.23r_base4.1
+      linux_64_libprotobuf4.23.2r_base4.1:
+        CONFIG: linux_64_libprotobuf4.23.2r_base4.1
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_libprotobuf4.23r_base4.2:
-        CONFIG: linux_64_libprotobuf4.23r_base4.2
+      linux_64_libprotobuf4.23.2r_base4.2:
+        CONFIG: linux_64_libprotobuf4.23.2r_base4.2
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
   timeoutInMinutes: 360
