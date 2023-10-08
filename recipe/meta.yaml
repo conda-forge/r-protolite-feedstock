@@ -15,17 +15,17 @@ source:
 build:
   skip: true  # [win]
   merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}sed               # [win]
     - {{ posix }}grep              # [win]
@@ -49,14 +49,23 @@ requirements:
     - libprotobuf
 
 test:
+  requires:
+    - r-testthat
+    - r-sf
+  source_files:
+    - tests/
   commands:
-    - $R -e "library('protolite')"           # [not win]
-    - "\"%R%\" -e \"library('protolite')\""  # [win]
+    - $R -e "library('protolite')"                                                    # [not win]
+    - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"           # [not win]
+    - "\"%R%\" -e \"library('protolite')\""                                           # [win]
+    - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)\""  # [win]
 
 about:
   home: https://github.com/jeroen/protolite#readme
   license: MIT
-  license_file: LICENSE
+  license_file: 
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
   summary: Optimized C++ implementations for reading and writing protocol-buffers. Currently supports 'rexp.proto' for serializing R objects and 'geobuf.proto' for geojson data. This lightweight package is complementary to the much larger 'RProtoBuf' package which provides a full featured toolkit for working with protocol-buffers
     in R.
   license_family: MIT
@@ -65,23 +74,3 @@ extra:
   recipe-maintainers:
     - conda-forge/r
     - xhochy
-
-# Package: protolite
-# Type: Package
-# Title: Fast and Simple Object Serialization to Protocol Buffers
-# Author: Jeroen Ooms
-# Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
-# Description: Optimized C++ implementations for reading and writing protocol-buffers. Currently supports 'rexp.proto' for serializing R objects and 'geobuf.proto' for geojson data. This lightweight package is complementary to the much larger 'RProtoBuf' package which provides a full featured toolkit for working with protocol-buffers in R.
-# Version: 1.9
-# License: MIT + file LICENSE
-# URL: https://github.com/jeroen/protolite#readme
-# BugReports: https://github.com/jeroen/protolite/issues
-# SystemRequirements: libprotobuf and protobuf-compiler
-# LinkingTo: Rcpp
-# Imports: Rcpp (>= 0.12.12), jsonlite
-# Suggests: testthat, RProtoBuf
-# RoxygenNote: 6.1.1
-# NeedsCompilation: yes
-# Packaged: 2019-07-02 10:59:17 UTC; jeroen
-# Repository: CRAN
-# Date/Publication: 2019-07-02 11:50:02 UTC
