@@ -51,6 +51,7 @@ requirements:
 test:
   requires:
     - r-testthat
+    - r-sf
   source_files:
     - tests/
   commands:
