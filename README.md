@@ -13,6 +13,8 @@ Package license: MIT
 
 Summary: Optimized C++ implementations for reading and writing protocol-buffers. Currently supports 'rexp.proto' for serializing R objects and 'geobuf.proto' for geojson data. This lightweight package is complementary to the much larger 'RProtoBuf' package which provides a full featured toolkit for working with protocol-buffers in R.
 
+Development: https://github.com/jeroen/protolite
+
 About r-protolite
 -----------------
 
@@ -21,6 +23,8 @@ Home: https://github.com/jeroen/protolite#readme
 Package license: MIT
 
 Summary: Optimized C++ implementations for reading and writing protocol-buffers. Currently supports 'rexp.proto' for serializing R objects and 'geobuf.proto' for geojson data. This lightweight package is complementary to the much larger 'RProtoBuf' package which provides a full featured toolkit for working with protocol-buffers in R.
+
+Development: https://github.com/jeroen/protolite
 
 Current build status
 ====================
