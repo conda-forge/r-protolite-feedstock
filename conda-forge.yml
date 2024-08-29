@@ -1,5 +1,6 @@
 bot:
   automerge: true
+  check_solvable: false
 conda_build:
   pkg_format: '2'
 conda_forge_output_validation: true
