@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/protolite_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/protolite/protolite_{{ version }}.tar.gz
-  sha256: 53ef24d51a8348f97bec39d254df3b97bd8b3d9bbffb81d6b06aad849cf78ce9
+  sha256: eed46fd63f9d183f974f420e9351f64e45c9edba00f56cc8c132c7aeb21697cc
 
 build:
   skip: true  # [win]
   merge_build_host: true  # [win]
-  number: 7
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -66,7 +66,7 @@ about:
   home: https://github.com/jeroen/protolite#readme
   dev_url: https://github.com/jeroen/protolite
   license: MIT
-  license_file: 
+  license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
   summary: Optimized C++ implementations for reading and writing protocol-buffers. Currently supports 'rexp.proto' for serializing R objects and 'geobuf.proto' for geojson data. This lightweight package is complementary to the much larger 'RProtoBuf' package which provides a full featured toolkit for working with protocol-buffers
