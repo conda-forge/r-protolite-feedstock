@@ -10,14 +10,18 @@ source:
     - {{ cran_mirror }}/src/contrib/protolite_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/protolite/protolite_{{ version }}.tar.gz
   sha256: eed46fd63f9d183f974f420e9351f64e45c9edba00f56cc8c132c7aeb21697cc
+  patches:
+    - patches/0001-add-win-pthread.patch
 
 build:
-  # Checking windows to see if it passes. Uncomment the line if it fails.
-  # skip: true  # [win]
   number: 1
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -41,12 +45,11 @@ requirements:
     - r-base
     - r-rcpp >=0.12.12
     - r-jsonlite
-    - libprotobuf
+    - libprotobuf                  # [not win]
   run:
     - r-base
     - r-rcpp >=0.12.12
     - r-jsonlite
-    - libprotobuf
 
 test:
   requires:
