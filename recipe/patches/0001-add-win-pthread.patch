@@ -1,0 +1,22 @@
+From 3d751585a261d8e84ea5724443b65987631286e0 Mon Sep 17 00:00:00 2001
+From: Mervin Fansler <mervin.fansler@bric.ku.dk>
+Date: Wed, 9 Oct 2024 13:06:00 +0200
+Subject: [PATCH] add win pthread
+
+---
+ src/Makevars.win | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Makevars.win b/src/Makevars.win
+index 2456954..10aba46 100644
+--- a/src/Makevars.win
++++ b/src/Makevars.win
+@@ -2,7 +2,7 @@ RWINLIB = ../windows/protobuf
+ PKG_CPPFLAGS= -I$(RWINLIB)/include -DUSENEWAPI
+ PKG_LIBS= -L$(RWINLIB)/lib${subst gcc,,${COMPILED_BY}}${R_ARCH} \
+ 	-L$(RWINLIB)/lib \
+-	-lprotobuf
++	-lprotobuf -pthread
+ BINDIR=$(RWINLIB)/bin$(subst 64,,$(WIN))
+ 
+ all: clean winlibs
