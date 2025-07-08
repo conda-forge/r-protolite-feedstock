@@ -14,7 +14,7 @@ source:
     - patches/0001-add-win-pthread.patch
 
 build:
-  number: 4
+  number: 5
   rpaths:
     - lib/R/lib/
     - lib/
@@ -41,6 +41,7 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - libstdcxx !=14.3.0,!=15.1.0           # [win]
   host:
     - r-base
     - r-rcpp >=0.12.12
@@ -50,6 +51,8 @@ requirements:
     - r-base
     - r-rcpp >=0.12.12
     - r-jsonlite
+  run_constrained:
+    - libstdcxx !=14.3.0,!=15.1.0           # [win]
 
 test:
   requires:
